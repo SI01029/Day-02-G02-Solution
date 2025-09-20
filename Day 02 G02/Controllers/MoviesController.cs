@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Day_02_G02.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Day_02_G02.Controllers
     //MVC Controller
@@ -57,37 +58,58 @@ namespace Day_02_G02.Controllers
         //{
         //    return $" Add Movie with Id: { id}";
         //}
-        public IActionResult GetMovie(int id)
+        //public IActionResult GetMovie(int id)
+        //{
+        //    if (id == 1)
+        //        //    return new ContentResult()
+        //        //{
+        //        //    Content = $"<h1>Get Movie With Id :{id}</h1>",
+        //        //    ContentType = "text/html",
+        //        //};
+        //        return Content($"<h1>Get Movie With Id :{id}</h1>", "text/html");
+        //    else if (id == 2)
+        //        //return new ContentResult()
+        //        //{
+        //        //    Content = $"<h1>Get Movie With Id :{id}</h1>",
+        //        //    ContentType = "object/pdf",
+
+        //        //  };
+        //        return Content($"<h1>Get Movie With Id :{id}</h1>", "object/pdf");
+        //    else if (id == 3)
+        //        //  return new RedirectResult("https://wuzzuf.net/jop/egypt");
+        //        return Redirect("https://wuzzuf.net/jop/egypt");
+
+        //    else
+        //       //  return new RedirectToActionResult("AddMovie", "Movies", new { id = 33 });
+        //    return RedirectToAction("AddMovie", "Movies", new { id = 33 }); 
+
+
+        //}
+
+        //public string AddMovie(int id)
+        //{
+        //    return $" Add Movie with Id: {id}";
+        //}
+
+
+        //Action Parameters [Model] Binding
+        //1 Form
+        //2 Segements
+        //3 Query String
+        //4 File
+
+        //[ActionName("GetMovie")]
+        //[HttpGet]
+        //public IActionResult GetMovie(int id)
+        //{
+        //    return Content($"<h1>Get Movie With Id :{id}</h1>", "text/html");
+        //}
+
+        public IActionResult GetMovie( int Id, string Name,Movie movie,int []arr)
         {
-            if (id == 1)
-                //    return new ContentResult()
-                //{
-                //    Content = $"<h1>Get Movie With Id :{id}</h1>",
-                //    ContentType = "text/html",
-                //};
-                return Content($"<h1>Get Movie With Id :{id}</h1>", "text/html");
-            else if (id == 2)
-                //return new ContentResult()
-                //{
-                //    Content = $"<h1>Get Movie With Id :{id}</h1>",
-                //    ContentType = "object/pdf",
-
-                //  };
-                return Content($"<h1>Get Movie With Id :{id}</h1>", "object/pdf");
-            else if (id == 3)
-                //  return new RedirectResult("https://wuzzuf.net/jop/egypt");
-                return Redirect("https://wuzzuf.net/jop/egypt");
-
-            else
-               //  return new RedirectToActionResult("AddMovie", "Movies", new { id = 33 });
-            return RedirectToAction("AddMovie", "Movies", new { id = 33 }); 
-
-
+            return Content($"<h1>Get Movie With Id :{movie.Id},Name:{movie.Name}</h1>", "text/html");
         }
 
-        public string AddMovie(int id)
-        {
-            return $" Add Movie with Id: {id}";
-        }
+
     }
 }
